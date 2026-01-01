@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لا يوجد اتصال - سيارية</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #F7F5F3;
+            color: #2B2B23;
+            text-align: center;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 500px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .icon {
+            font-size: 4rem;
+            color: #E4568B;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            color: #2B2B23;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #7D99A3;
+            margin-bottom: 2rem;
+        }
+        button {
+            background: #E4568B;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #D6457B;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🚗</div>
+        <h1>لا يوجد اتصال بالإنترنت</h1>
+        <p>عذراً، يبدو أنك غير متصلة بالإنترنت. بعض الميزات تحتاج إلى اتصال.</p>
+        <p>يمكنك استخدام الميزات المتوفرة حالياً دون اتصال:</p>
+        <ul style="text-align: right; margin: 1rem 0;">
+            <li>الملف الشخصي والمحفوظات</li>
+            <li>المحادثات السابقة مع المساعد</li>
+            <li>المحتوى الذي تم تحميله مسبقاً</li>
+        </ul>
+        <button onclick="window.location.reload()">إعادة المحاولة</button>
+    </div>
+</body>
+</html>

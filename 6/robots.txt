@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Disallow crawling of admin or private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/

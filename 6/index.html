@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>وُكار - WoCar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#5a101b" />
+  <meta name="description" content="منصة إرشادية تساعدك تختار السيارة المناسبة وتحل مشاكلها بطريقة بسيطة وواضحة" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+  <!-- Font Awesome للايقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- 🔹 HEADER -->
+  <header class="app-header">
+    <div class="logo">
+    <img src="assets/img/welogo.png" alt="WoCar Logo" class="logo-img">
+   </div>
+   <span class="logo-sub">وُكار – وكادك لاختيار السيارة الصح</span>
+
+    <nav class="main-nav">
+      <button class="nav-btn active" data-section="home">
+        <i class="fas fa-home"></i> الرئيسية
+      </button>
+      <button class="nav-btn" data-section="car-match">
+        <i class="fas fa-car"></i> اختيار سيارة
+      </button>
+      <button class="nav-btn" data-section="fix">
+        <i class="fas fa-tools"></i> حل مشكلة
+      </button>
+      <button class="nav-btn" data-section="map">
+        <i class="fas fa-map-marked-alt"></i> الخريطة
+      </button>
+      
+      <button class="nav-btn" data-section="ai">
+        <i class="fas fa-robot"></i> مساعد AI
+      </button>
+      <button class="nav-btn" data-section="profile" id="profileBtn">
+        <i class="fas fa-user-circle"></i>
+      </button>
+    </nav>
+    
+    <!-- مؤشر التمرير الحالي -->
+    <div class="nav-indicator"></div>
+  </header>
+
+   <!-- 🔹 MAIN -->
+  <main>
+    <!-- 🏠 الصفحة الرئيسية -->
+    <section id="home" class="section active soft-home">
+
+      <!-- 🎀 HERO SOFT -->
+      <div class="hero-soft">
+        <div class="hero-text">
+         <p class="hero-label-soft">منصة إرشادية للسيارات</p>
+         <h1 class="hero-title-soft">
+          نخلي اختيار سيارتك أسهل
+        </h1>
+        <p class="hero-desc-soft">
+  بأسئلة بسيطة نعطيك ترشيحات واضحة للسيارة اللي تناسب استخدامك، بدون تعقيد ولا مصطلحات مزعجة.
+</p>
+
+          <div class="hero-actions-soft">
+            <button class="primary-btn big-btn" data-section="car-match">   ابدأ اختيار السيارة
+</button>
+            <button class="ghost-btn big-btn" data-section="fix">عندي مشكلة في السيارة</button>
+          </div>
+        </div>
+
+    <div class="hero-image-soft" role="img"
+      aria-label="صورة سيارة حديثة مناسبة للاستخدام اليومي">
+    </div>
+
+      </div>
+      <!-- 🧁 MINI CARDS -->
+      <div class="soft-mini-grid">
+        <div class="soft-mini-card" data-section="car-match">
+          <div class="mini-card-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <h4>اختيار السيارة</h4>
+          <p class="mini-card-desc">دليل مفصل لاختيار السيارة المناسبة</p>
+        </div>
+        
+        <div class="soft-mini-card" data-section="fix">
+          <div class="mini-card-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h4>حل مشكلة</h4>
+          <p class="mini-card-desc">تشخيص أولي للمشاكل الشائعة</p>
+        </div>
+        
+        <div class="soft-mini-card" data-section="map">
+          <div class="mini-card-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h4>الخريطة</h4>
+          <p class="mini-card-desc">ورش ومحلات موثوقة قريبة منك</p>
+        </div>
+      </div>
+      <!-- 🌸 WHY BOX -->
+      <div class="soft-why card fade-in">
+        <div class="why-header">
+          <h3><i class="fas fa-heart"></i> ليش هذا التطبيق؟</h3>
+          <span class="why-badge">مخصص لك</span>
+        </div>
+        
+        <div class="why-content">
+          <div class="why-point">
+            <div class="why-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h4>بدون خبرة سابقة</h4>
+              <p>ما تحتاجين خبرة سابقة عن السيارات</p>
+            </div>
+          </div>
+          
+          <div class="why-point">
+            <div class="why-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div>
+              <h4>إجابات بسيطة</h4>
+              <p>إجابات واضحة بدون تعقيد ميكانيكي</p>
+            </div>
+          </div>
+          
+          <div class="why-point">
+            <div class="why-icon">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <div>
+              <h4>مخصص للنساء </h4>
+              <p>كل شيء مخصّص لاحتياجاتك </p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- 🚘 اختيار سيارة -->
+<section id="car-match" class="section car-match">
+  <div class="section-header">
+    <h2 class="section-title">
+      <i class="fas fa-magic"></i> اختيار السيارة المناسبة
+    </h2>
+    <p class="section-subtitle">
+      جاوب على مجموعة أسئلة بسيطة، ونرشح لك سيارات تناسب استخدامك وميزانيتك.
+    </p>
+  </div>
+
+  <div id="carWizard">
+    
+    <!-- ملخص الإجابات -->
+    <div class="answers-summary card hidden" id="answersSummary">
+      <h3><i class="fas fa-clipboard-check"></i> ملخص إجاباتك</h3>
+      <div id="summaryContent"></div>
+      <button class="ghost-btn" id="editAnswers">تعديل الإجابات</button>
+    </div>
+
+    <!-- الخطوة 1 -->
+    <div class="car-step card fade-in" data-step="1">
+      <div class="step-header">
+        <span class="step-number">1</span>
+        <h2>كم ميزانيتك التقريبية؟</h2>
+      </div>
+      
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 1 من 10</div>
+      </div>
+    
+      <div class="options-grid">
+        <button class="step-btn" data-value="low">
+          <i class="fas fa-coins"></i>
+          <span class="btn-title">أقل من 70,000</span>
+          <span class="btn-desc">اقتصادية مناسبة</span>
+        </button>
+        <button class="step-btn" data-value="mid">
+          <i class="fas fa-chart-line"></i>
+          <span class="btn-title">70,000 - 140,000</span>
+          <span class="btn-desc">متوسطة السعر</span>
+        </button>
+        <button class="step-btn" data-value="high">
+          <i class="fas fa-crown"></i>
+          <span class="btn-title">أكثر من 140,000</span>
+          <span class="btn-desc">فخمة ومتطورة</span>
+        </button>
+      </div>
+      
+      <button class="ghost-btn back-btn hidden">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 2 -->
+    <div class="car-step card hidden fade-in" data-step="2">
+      <div class="step-header">
+        <span class="step-number">2</span>
+        <h2>وش استخدامك غالب الوقت؟</h2>
+      </div>
+      
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 2 من 10</div>
+      </div>
+      
+      <div class="options-grid">
+        <button class="step-btn" data-value="city">
+          <i class="fas fa-city"></i>
+          <span class="btn-title">داخل المدينة</span>
+          <span class="btn-desc">تنقلات يومية</span>
+        </button>
+        <button class="step-btn" data-value="travel">
+          <i class="fas fa-route"></i>
+          <span class="btn-title">سفر وطرق سريعة</span>
+          <span class="btn-desc">رحلات طويلة</span>
+        </button>
+        <button class="step-btn" data-value="mixed">
+          <i class="fas fa-random"></i>
+          <span class="btn-title">الاثنين معًا</span>
+          <span class="btn-desc">استخدام متنوع</span>
+        </button>
+      </div>
+      
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 3 -->
+    <div class="car-step card hidden fade-in" data-step="3">
+      <div class="step-header">
+        <span class="step-number">3</span>
+        <h2>وش أهم شيء عندك؟</h2>
+      </div>
+      
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 3 من 10</div>
+      </div>
+      
+      <div class="options-grid">
+        <button class="step-btn" data-value="comfort">
+          <i class="fas fa-couch"></i>
+          <span class="btn-title">راحة وعزل</span>
+          <span class="btn-desc">رحلة مريحة</span>
+        </button>
+        <button class="step-btn" data-value="saving">
+          <i class="fas fa-gas-pump"></i>
+          <span class="btn-title">توفير بالبنزين</span>
+          <span class="btn-desc">تكاليف قليلة</span>
+        </button>
+        <button class="step-btn" data-value="space">
+          <i class="fas fa-users"></i>
+          <span class="btn-title">مساحة للعائلة</span>
+          <span class="btn-desc">عائلة كبيرة</span>
+        </button>
+      </div>
+      
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 4 -->
+    <div class="car-step card hidden fade-in" data-step="4">
+      <div class="step-header">
+        <span class="step-number">4</span>
+        <h2>وش أهم شي في السيارة عندك؟</h2>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 4 من 10</div>
+      </div>
+
+      <div class="options-grid">
+        <button class="step-btn" data-value="comfort">
+          <i class="fas fa-couch"></i>
+          <span class="btn-title">راحة</span>
+          <span class="btn-desc">راحة داخلية أكثر في التنقلات</span>
+        </button>
+        <button class="step-btn" data-value="power">
+          <i class="fas fa-tachometer-alt"></i>
+          <span class="btn-title">قوة</span>
+          <span class="btn-desc">أداء أقوى وتسارع أفضل</span>
+        </button>
+        <button class="step-btn" data-value="cargo">
+          <i class="fas fa-boxes"></i>
+          <span class="btn-title">تحميل / شنط</span>
+          <span class="btn-desc">مساحة أكبر للأغراض والشنط</span>
+        </button>
+      </div>
+
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 5 -->
+    <div class="car-step card hidden fade-in" data-step="5">
+      <div class="step-header">
+        <span class="step-number">5</span>
+        <h2>حجم السيارة اللي يناسبك؟</h2>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 5 من 10</div>
+      </div>
+
+      <div class="options-grid">
+        <button class="step-btn" data-value="small">
+          <i class="fas fa-car-side"></i>
+          <span class="btn-title">صغيرة</span>
+          <span class="btn-desc">مناسبة للمدينة والمواقف الضيقة</span>
+        </button>
+        <button class="step-btn" data-value="sedan">
+          <i class="fas fa-taxi"></i>
+          <span class="btn-title">سيدان متوسطة</span>
+          <span class="btn-desc">مريحة ومناسبة للاستخدام اليومي</span>
+        </button>
+        <button class="step-btn" data-value="suv">
+          <i class="fas fa-truck-monster"></i>
+          <span class="btn-title">SUV / كروس أوفر</span>
+          <span class="btn-desc">مساحة أكبر وارتفاع أعلى</span>
+        </button>
+      </div>
+
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 6 -->
+    <div class="car-step card hidden fade-in" data-step="6">
+      <div class="step-header">
+        <span class="step-number">6</span>
+        <h2>غالباً كم شخص يركب معك؟</h2>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 6 من 10</div>
+      </div>
+
+      <div class="options-grid">
+        <button class="step-btn" data-value="1-2">
+          <i class="fas fa-user-friends"></i>
+          <span class="btn-title">1 – 2</span>
+          <span class="btn-desc">استخدام شخصي أغلب الوقت</span>
+        </button>
+        <button class="step-btn" data-value="3-4">
+          <i class="fas fa-users"></i>
+          <span class="btn-title">3 – 4</span>
+          <span class="btn-desc">عائلة صغيرة أو أصدقاء</span>
+        </button>
+        <button class="step-btn" data-value="5plus">
+          <i class="fas fa-users-cog"></i>
+          <span class="btn-title">5 أو أكثر</span>
+          <span class="btn-desc">عائلة كبيرة / استخدام عائلي</span>
+        </button>
+      </div>
+
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 7 -->
+    <div class="car-step card hidden fade-in" data-step="7">
+      <div class="step-header">
+        <span class="step-number">7</span>
+        <h2>تفكر في سيارة جديدة ولا مستعملة؟</h2>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 7 من 10</div>
+      </div>
+
+      <div class="options-grid">
+        <button class="step-btn" data-value="new">
+          <i class="fas fa-certificate"></i>
+          <span class="btn-title">جديدة من الوكيل</span>
+          <span class="btn-desc">ضمان كامل ومواصفات معروفة</span>
+        </button>
+        <button class="step-btn" data-value="used">
+          <i class="fas fa-car-crash"></i>
+          <span class="btn-title">مستعملة</span>
+          <span class="btn-desc">سعر أقل لكن تحتاج فحص دقيق</span>
+        </button>
+        <button class="step-btn" data-value="no-preference">
+          <i class="fas fa-random"></i>
+          <span class="btn-title">ما يهم</span>
+          <span class="btn-desc">الأهم السعر والحالة</span>
+        </button>
+      </div>
+
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 8 -->
+    <div class="car-step card hidden fade-in" data-step="8">
+      <div class="step-header">
+        <span class="step-number">8</span>
+        <h2>صرفية البنزين مهمة لك قدّ إيش؟</h2>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 8 من 10</div>
+      </div>
+
+      <div class="options-grid">
+        <button class="step-btn" data-value="very-important">
+          <i class="fas fa-gas-pump"></i>
+          <span class="btn-title">مهمة جداً</span>
+          <span class="btn-desc">أفضّل سيارة اقتصادية قدر الإمكان</span>
+        </button>
+        <button class="step-btn" data-value="medium">
+          <i class="fas fa-balance-scale"></i>
+          <span class="btn-title">مهمة لكن مو كل شيء</span>
+          <span class="btn-desc">توازن بين الراحة والصرفية</span>
+        </button>
+        <button class="step-btn" data-value="not-important">
+          <i class="fas fa-tachometer-alt"></i>
+          <span class="btn-title">مو فارقة كثير</span>
+          <span class="btn-desc">الأولوية لأشياء ثانية</span>
+        </button>
+      </div>
+
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 9 -->
+    <div class="car-step card hidden fade-in" data-step="9">
+      <div class="step-header">
+        <span class="step-number">9</span>
+        <h2>وش وضعك مع التقنيات والأنظمة؟</h2>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 9 من 10</div>
+      </div>
+
+      <div class="options-grid">
+        <button class="step-btn" data-value="high-tech">
+          <i class="fas fa-mobile-alt"></i>
+          <span class="btn-title">أحب التقنيات</span>
+          <span class="btn-desc">شاشة، أبل كار بلاي، رادار…</span>
+        </button>
+        <button class="step-btn" data-value="basic-ok">
+          <i class="fas fa-radio"></i>
+          <span class="btn-title">أساسيات تكفي</span>
+          <span class="btn-desc">بلوتوث، حساسات، كاميرا خلفية</span>
+        </button>
+        <button class="step-btn" data-value="no-tech">
+          <i class="fas fa-power-off"></i>
+          <span class="btn-title">مو مهم</span>
+          <span class="btn-desc">الأهم الاعتمادية والسعر</span>
+        </button>
+      </div>
+
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- الخطوة 10 -->
+    <div class="car-step card hidden fade-in" data-step="10">
+      <div class="step-header">
+        <span class="step-number">10</span>
+        <h2>تستخدم السيارة في طرق ترابية أو بر؟</h2>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress"><span></span></div>
+        <div class="progress-text">الخطوة 10 من 10</div>
+      </div>
+
+      <div class="options-grid">
+        <button class="step-btn" data-value="no-offroad">
+          <i class="fas fa-road"></i>
+          <span class="btn-title">لا، غالباً شوارع مدينة</span>
+          <span class="btn-desc">استخدام طبيعي داخل المدينة</span>
+        </button>
+        <button class="step-btn" data-value="sometimes-offroad">
+          <i class="fas fa-mountain"></i>
+          <span class="btn-title">أحياناً بر / استراحة</span>
+          <span class="btn-desc">احتاج سيارة تتحمل شوي</span>
+        </button>
+        <button class="step-btn" data-value="offroad">
+          <i class="fas fa-truck-pickup"></i>
+          <span class="btn-title">كثير بر / استراحات</span>
+          <span class="btn-desc">مفضل دفع رباعي أو SUV قوية</span>
+        </button>
+      </div>
+
+      <button class="ghost-btn back-btn">
+        <i class="fas fa-arrow-right"></i> رجوع
+      </button>
+    </div>
+
+    <!-- 🎯 النتائج -->
+    <div id="carMatchResult" class="card hidden fade-in">
+      <div class="result-header">
+        <h2><i class="fas fa-trophy"></i> ترشيح السيارات المناسبة لك</h2>
+        <button class="ghost-btn small-btn" id="restartWizard">
+          <i class="fas fa-redo"></i> إعادة الاختيار
+        </button>
+      </div>
+      
+      <div class="result-summary">
+        <p>بناءً على إجاباتك، هذه أفضل السيارات المناسبة:</p>
+      </div>
+      
+      <div id="carCards" class="cars-grid"></div>
+      
+      <div class="result-actions">
+        <button class="primary-btn" id="saveResults">
+          <i class="fas fa-save"></i> حفظ النتائج
+        </button>
+        <button class="ghost-btn" id="compareCars">
+          <i class="fas fa-balance-scale"></i> مقارنة السيارات
+        </button>
+      </div>
+    </div>
+    
+  </div> 
+
+  <!-- قسم السيارات الموصى بها -->
+  <div class="cars-showcase-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-star"></i> سيارات موصى بها
+      </h2>
+      <p class="section-subtitle">سيارات ننصح بها بناءً على تجارب المستخدمات</p>
+    </div>
+  </div>
+</section>
+      <!-- 🎯 النتائج -->
+      <div id="carMatchResult" class="card hidden fade-in">
+        <div class="result-header">
+          <h2><i class="fas fa-trophy"></i> ترشيح السيارات المناسبة لك</h2>
+          <button class="ghost-btn small-btn" id="restartWizard">
+            <i class="fas fa-redo"></i> إعادة الاختيار
+          </button>
+        </div>
+        
+        <div class="result-summary">
+          <p>بناءً على إجاباتك، هذه أفضل السيارات المناسبة:</p>
+        </div>
+        
+        <div id="carCards" class="cars-grid"></div>
+        
+        <div class="result-actions">
+          <button class="primary-btn" id="saveResults">
+            <i class="fas fa-save"></i> حفظ النتائج
+          </button>
+          <button class="ghost-btn" id="compareCars">
+            <i class="fas fa-balance-scale"></i> مقارنة السيارات
+          </button>
+        </div>
+      </div>
+      
+<div id="carMatchResult" class="card hidden fade-in">
+
+</div>
+
+
+<div class="cars-showcase-section">
+  <div class="section-header">
+    <h2 class="section-title">
+      <i class="fas fa-star"></i> سيارات موصى بها
+    </h2>
+    <p class="section-subtitle">سيارات ننصح بها بناءً على تجارب المستخدمات</p>
+  </div>
+  
+  <!-- كارت تويوتا كامري -->
+  <div class="featured-car">
+    <div class="car-image-container">
+    <img src="car-image.jpg" alt="كامري 2024" class="car-image">
+  </div>
+  
+  <div class="car-basic-info">
+    <div class="car-title-section">
+      <span class="car-year-badge">2024</span>
+      <h2 class="car-model-name">تويوتا كامري</h2>
+      <p class="car-category">سيدان متوسطة</p>
+    </div>
+    
+    <div class="car-specs-featured">
+      <div class="spec-item">
+        <div class="spec-icon">⛽</div>
+        <div class="spec-details">
+          <h4>أوتوماتيك</h4>
+          <p>ناقل الحركة</p>
+        </div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon">👥</div>
+        <div class="spec-details">
+          <h4>5 ركاب</h4>
+          <p>السعة</p>
+        </div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon">🐎</div>
+        <div class="spec-details">
+          <h4>203 حصان</h4>
+          <p>القوة</p>
+        </div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon">🏢</div>
+        <div class="spec-details">
+          <h4>الدفع</h4>
+          <p>دفاع 2024</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="featured-dealer">
+      <div class="dealer-title">
+        <i class="fas fa-building"></i>
+        <strong>الموزع المعتمد:</strong>
+      </div>
+      <h3 class="dealer-name">عبداللطيف جميل</h3>
+    </div>
+    
+    <div class="other-dealers-featured">
+      <span class="other-dealers-label">متوفر أيضاً لدى:</span>
+      <div class="other-dealers-list">
+        <span class="other-dealer-tag">الشركة العالمية</span>
+        <span class="other-dealer-tag">الناغي</span>
+        <span class="other-dealer-tag">الجفالي</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="car-pricing-featured">
+    <div class="price-display">
+      <span class="price-label">السعر الرسمي</span>
+      <div class="price-amount-featured">
+        <span class="amount-featured">19,900</span>
+        <span class="currency-featured">ريال</span>
+      </div>
+      <span class="price-period">شهرياً</span>
+    </div>
+    
+    <div class="price-breakdown">
+      <div class="price-row-featured">
+        <span class="price-detail-label">المستوى الرسمي:</span>
+        <span class="price-detail-value">17,000 ريال</span>
+      </div>
+      <div class="price-row-featured">
+        <span class="price-detail-label">العربية:</span>
+        <span class="price-detail-value">2,900 ريال</span>
+      </div>
+      <div class="price-row-featured total">
+        <span class="price-detail-label">الإجمالي:</span>
+        <span class="price-detail-value">19,900 ريال</span>
+      </div>
+    </div>
+    
+    <div class="action-buttons-featured">
+      <button class="compare-btn-featured">
+        <i class="fas fa-balance-scale"></i>
+        مقارنة
+      </button>
+      <button class="contact-btn-featured">
+        <i class="fas fa-phone-alt"></i>
+        طلب عرض
+      </button>
+    </div>
+    
+    <button class="request-offer-btn">
+      <i class="fas fa-file-invoice"></i>
+      طلب عرض مفصل
+    </button>
+    
+    <div class="price-note-featured">
+      <i class="fas fa-info-circle"></i>
+      <span>السعر يشمل الضريبة والتأمين. قابل للتفاوض حسب المميزات الإضافية.</span>
+    </div>
+  </div>
+</div>
+  
+  <!-- يمكن إضافة سيارات أخرى هنا لاحقاً -->
+  <div class="cars-grid-preview">
+    <p>مزيد من السيارات قريباً...</p>
+  </div>
+</div>
+
+<!-- ثم تتابع مع -->
+
+      <!-- 💡 نصائح إضافية -->
+      <div class="tips-section card">
+        <h3><i class="fas fa-lightbulb"></i> نصائح قبل الشراء</h3>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <i class="fas fa-search"></i>
+            <h4>افحصي السيارة</h4>
+            <p>اختاري معرض معتمد وافحصي السيارة قبل الشراء</p>
+          </div>
+          <div class="tip-card">
+            <i class="fas fa-file-contract"></i>
+            <h4>راجعي العقود</h4>
+            <p>اقرأي كل البنود في عقد الشراء</p>
+          </div>
+          <div class="tip-card">
+            <i class="fas fa-shield-alt"></i>
+            <h4>التأمين مهم</h4>
+            <p>لا تنسي تأمين شامل للسيارة</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🛠 حل مشكلة -->
+    <section id="fix" class="section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-stethoscope"></i> وش مشكلة سيارتك؟
+        </h2>
+        <p class="section-subtitle">وصفي المشكلة وأعطيك وش تسوين مبدئيًا قبل تتوجهين للورشة</p>
+      </div>
+
+      <!-- مشاكل سريعة -->
+      <div class="quick-problems card">
+        <h3><i class="fas fa-bolt"></i> مشاكل سريعة شائعة</h3>
+        <div class="problems-grid">
+          <button class="problem-btn" data-problem="engine-light">
+            <i class="fas fa-engine-warning"></i>
+            <span>لمبة المكينه تضيء</span>
+          </button>
+          <button class="problem-btn" data-problem="battery">
+            <i class="fas fa-car-battery"></i>
+            <span>البطارية تخلص بسرعة</span>
+          </button>
+          <button class="problem-btn" data-problem="brake">
+            <i class="fas fa-stop-circle"></i>
+            <span>صوت فرامل مزعج</span>
+          </button>
+          <button class="problem-btn" data-problem="tire">
+            <i class="fas fa-tire-pressure-warning"></i>
+            <span>ضغط كفرات منخفض</span>
+          </button>
+        </div>
+      </div>
+
+<form id="fixForm" class="card form-card fade-in">
+        <div class="form-header">
+          <h3><i class="fas fa-edit"></i> وصف المشكلة</h3>
+          <span class="form-required">* مطلوب</span>
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <i class="fas fa-car"></i> نوع سيارتك وموديلها:
+            <input type="text" name="car" 
+              placeholder="مثال: هيونداي اكسنت 2018" 
+              required 
+              class="form-input" />
+            <span class="input-hint">أدخلي الموديل الدقيق لو تعرفين</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <i class="fas fa-exclamation-circle"></i> وصف المشكلة:
+            <textarea name="issue" 
+              placeholder="صوت – لمبة تولّع – رجّة – دخان – ريحة غريبة... حاولي تكون دقيقة في الوصف" 
+              rows="4" 
+              required
+              class="form-textarea"></textarea>
+            <span class="input-hint">كلما كان الوصف أدق، كانت المساعدة أفضل</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <i class="fas fa-calendar"></i> متى تبدأ المشكلة؟
+            <select name="frequency" class="form-select">
+              <option value="">اختاري التكرار...</option>
+              <option value="always">دائمًا موجودة</option>
+              <option value="sometimes">أحيانًا تظهر</option>
+              <option value="cold">فقط لما تكون السيارة باردة</option>
+              <option value="hot">فقط لما تكون السيارة حارة</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="ghost-btn" type="reset">
+            <i class="fas fa-undo"></i> مسح النموذج
+          </button>
+          <button class="primary-btn" type="submit">
+            <i class="fas fa-lightbulb"></i> حلّي المشكلة مبدئيًا
+          </button>
+        </div>
+      </form>
+
+      <!-- نتائج التشخيص -->
+      <div id="fixResult" class="card hidden fade-in">
+        <div class="result-header">
+          <h3><i class="fas fa-diagnoses"></i> تشخيص مبدئي</h3>
+          <div class="result-severity">
+            <span class="severity-indicator severity-medium"></span>
+            <span>متوسطة الخطورة</span>
+          </div>
+        </div>
+        
+        <div class="diagnosis-content">
+          <div class="diagnosis-problem">
+            <h4>المشكلة:</h4>
+            <p id="problemText"></p>
+          </div>
+          
+          <div class="diagnosis-solution">
+            <h4><i class="fas fa-check-circle"></i> خطوات الحل:</h4>
+            <ol id="solutionSteps"></ol>
+          </div>
+          
+          <div class="diagnosis-warning">
+            <h4><i class="fas fa-exclamation-triangle"></i> تحذيرات مهمة:</h4>
+            <p>هذا تشخيص أولي فقط، الأفضل تفحصين السيارة في ورشة موثوقة إذا استمرت المشكلة.</p>
+          </div>
+          
+          <div class="diagnosis-actions">
+            <button class="ghost-btn" id="saveDiagnosis">
+              <i class="fas fa-save"></i> حفظ التشخيص
+            </button>
+            <button class="primary-btn" id="findWorkshop">
+              <i class="fas fa-map-marker-alt"></i> إيجاد ورشة قريبة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 💡 نصائح وقائية -->
+      <div class="preventive-tips card">
+        <h3><i class="fas fa-shield-alt"></i> نصائح وقائية</h3>
+        <div class="tips-list">
+          <div class="tip-item">
+            <i class="fas fa-oil-can"></i>
+            <div>
+              <h4>غيري الزيت بانتظام</h4>
+              <p>كل 5000-10000 كم حسب نوع السيارة</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-tire"></i>
+            <div>
+              <h4>افحصي الكفرات</h4>
+              <p>كل شهر تأكدي من ضغط الإطارات</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-battery-full"></i>
+            <div>
+              <h4>راقبي البطارية</h4>
+              <p>العمر الافتراضي 2-3 سنوات</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🗺 الخريطة -->
+    <section id="map" class="section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-map-marked-alt"></i> خريطة المحلات والخدمات
+        </h2>
+        <p class="section-subtitle">اختاري مدينتك لمعرفة أقرب ورش ومحلات مناسبة وآمنة</p>
+      </div>
+
+      <!-- 🔍 البحث والفلترة -->
+      <div class="map-controls card">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="ابحث عن ورشة أو خدمة..." id="mapSearch">
+        </div>
+        
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-layer-group"></i> الكل
+          </button>
+          <button class="filter-btn" data-filter="workshop">
+            <i class="fas fa-tools"></i> ورش
+          </button>
+          <button class="filter-btn" data-filter="wash">
+            <i class="fas fa-car-wash"></i> غسيل
+          </button>
+          <button class="filter-btn" data-filter="women">
+            <i class="fas fa-female"></i> نسائية
+          </button>
+        </div>
+      </div>
+
+      <!-- 🗺 حاوية الخريطة -->
+      <div class="map-container card">
+        <div class="map-header">
+          <h3><i class="fas fa-map"></i> الخريطة التفاعلية</h3>
+          <button class="ghost-btn small-btn" id="locateMe">
+            <i class="fas fa-location-arrow"></i> موقعي الحالي
+          </button>
+        </div>
+        
+        <!-- الخريطة الوهمية (يمكن استبدالها بخريطة حقيقية) -->
+        <div class="map-placeholder" id="interactiveMap">
+          <div class="map-point" style="top: 30%; left: 40%;" data-type="workshop" data-women="true">
+            <div class="point-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="point-tooltip">
+              <strong>ورشة البنات – شمال الرياض</strong>
+              <span>⭐ 4.8 (120 تقييم)</span>
+            </div>
+          </div>
+          
+          <div class="map-point" style="top: 60%; left: 60%;" data-type="wash" data-women="true">
+            <div class="point-icon">
+              <i class="fas fa-car-wash"></i>
+            </div>
+            <div class="point-tooltip">
+              <strong>مغسلة نسائية – طريق الملك</strong>
+              <span>⭐ 4.5 (85 تقييم)</span>
+            </div>
+          </div>
+          
+          <div class="map-point" style="top: 45%; left: 25%;" data-type="workshop">
+            <div class="point-icon">
+              <i class="fas fa-wrench"></i>
+            </div>
+            <div class="point-tooltip">
+              <strong>مركز الصيانة المتكامل</strong>
+              <span>⭐ 4.2 (200 تقييم)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="map-legend">
+          <div class="legend-item">
+            <span class="legend-color workshop"></span>
+            <span>ورش صيانة</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color wash"></span>
+            <span>محلات غسيل</span>
+          </div>
+                  </div>
+      </div>
+
+      <!-- 📍 قائمة الأماكن -->
+      <div class="places-section">
+        <div class="places-header">
+          <h3><i class="fas fa-list"></i> الأماكن المقترحة</h3>
+          
+          <div class="city-selector">
+            <label>
+              <i class="fas fa-city"></i> مدينتك:
+              <select id="citySelect" class="form-select">
+                <option value="">اختاري مدينة…</option>
+                <option value="riyadh">الرياض</option>
+                <option value="jeddah">جدة</option>
+                <option value="dammam">الدمام</option>
+                <option value="khobar">الخبر</option>
+                <option value="makkah">مكة المكرمة</option>
+                <option value="medina">المدينة المنورة</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div id="placesList" class="places-grid"></div>
+      </div>
+
+    </section>
+    <!-- 🤖 مساعد AI -->
+    <section id="ai" class="section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-robot"></i> اسأليني — وأنا أعطيك العلم
+        </h2>
+        <p class="section-subtitle">اكتبي سؤالك — وسيرد عليكِ المساعد بطريقة بسيطة ومختصرة.</p>
+        <div class="ai-badge">
+          <i class="fas fa-star"></i>
+          <span>مخصص لبنات </span>
+        </div>
+      </div>
+
+      <!-- بطاقة المساعد الرئيسية -->
+      <div class="card ai-card">
+        <!-- حالة الاتصال -->
+        <div class="ai-status">
+          <div class="status-indicator active"></div>
+          <span>مساعد AI متصل وجاهز للإجابة</span>
+          <span class="ai-model">GPT-4 Turbo</span>
+        </div>
+        
+        <!-- منطقة المحادثة -->
+        <div id="aiChat" class="ai-chat">
+          <!-- الرسالة الترحيبية -->
+          <div class="ai-msg ai-msg-bot">
+            <div class="msg-avatar">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="msg-content">
+              <div class="msg-sender">مساعد AI</div>
+              <div class="msg-text">أهلًا وسهلًا 👋 أنا مساعدك الذكي الخاص بالسيارات. اسأليني عن أي شيء يخص سيارتك - اختيار سيارة، مشاكل تقنية، صيانة، أو نصائح عامة.</div>
+              <div class="msg-time">الآن</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- أمثلة للأسئلة الشائعة -->
+        <div class="ai-examples">
+          <h3><i class="fas fa-lightbulb"></i> أمثلة للأسئلة الشائعة:</h3>
+          <div class="examples-grid">
+            <button class="example-btn" data-question="وش أفضل SUV صغيرة للرياض؟">
+              <i class="fas fa-car"></i>
+              <div>
+                <span class="example-title">أفضل SUV صغيرة للرياض</span>
+                <span class="example-desc">سيارات عملية للتنقل اليومي</span>
+              </div>
+            </button>
+            <button class="example-btn" data-question="وش يعني لما تطلع لمبة الزيت؟">
+              <i class="fas fa-exclamation-triangle"></i>
+              <div>
+                <span class="example-title">لمبة الزيت تعني إيه؟</span>
+                <span class="example-desc">تشخيص مشاكل المحرك</span>
+              </div>
+            </button>
+            <button class="example-btn" data-question="كم مرة لازم أغير زيت السيارة؟">
+              <i class="fas fa-oil-can"></i>
+              <div>
+                <span class="example-title">تغيير زيت السيارة</span>
+                <span class="example-desc">جدول الصيانة الدورية</span>
+              </div>
+            </button>
+            <button class="example-btn" data-question="وش أفضل موقع لبيع السيارات المستعملة في السعودية؟">
+              <i class="fas fa-car-side"></i>
+              <div>
+                <span class="example-title">بيع السيارات المستعملة</span>
+                <span class="example-desc">منصات موثوقة للشراء</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- نموذج الإدخال -->
+        <form id="aiForm" class="ai-input-row">
+          <div class="input-wrapper">
+            <input type="text" id="aiInput" 
+                   placeholder="اكتبي سؤالك هنا... مثال: وش أفضل SUV صغيرة للرياض؟" 
+                   autocomplete="off" />
+            <div class="input-actions">
+              <button type="button" class="input-action-btn" id="voiceBtn" title="التحدث">
+                <i class="fas fa-microphone"></i>
+              </button>
+              <button type="button" class="input-action-btn" id="attachBtn" title="إرفاق صورة">
+                <i class="fas fa-image"></i>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="primary-btn send-btn">
+            <i class="fas fa-paper-plane"></i> إرسال
+          </button>
+        </form>
+        
+        <!-- ميزات المساعد -->
+        <div class="ai-features">
+          <h3><i class="fas fa-cogs"></i> ميزات المساعد:</h3>
+          <div class="features-list">
+            <div class="feature">
+              <i class="fas fa-comments"></i>
+              <div>
+                <h4>إجابات بلغة عربية بسيطة</h4>
+                <p>بدون مصطلحات تقنية معقدة</p>
+              </div>
+            </div>
+            <div class="feature">
+              <i class="fas fa-user-shield"></i>
+              <div>
+                <h4>خصوصية كاملة</h4>
+                <p>محادثتك آمنة ولا يتم تخزينها</p>
+              </div>
+            </div>
+            <div class="feature">
+              <i class="fas fa-car-crash"></i>
+              <div>
+                <h4>تشخيص المشاكل</h4>
+                <p>تشخيص أولي لمشاكل سيارتك</p>
+              </div>
+            </div>
+            <div class="feature">
+              <i class="fas fa-headset"></i>
+              <div>
+                <h4>دعم 24/7</h4>
+                <p>متاح في أي وقت تحتاجينه</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- الإحصائيات -->
+        <div class="ai-stats">
+          <div class="stat-item">
+            <span class="stat-number">2,500+</span>
+            <span class="stat-label">سؤال تمت الإجابة عليه</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">دقة الإجابات</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4.8</span>
+            <span class="stat-label">تقييم المستخدمات</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- قسم الأسئلة المتوقعة -->
+      <div class="predicted-questions card">
+        <h3><i class="fas fa-bolt"></i> أسئلة قد تهمك:</h3>
+        <div class="questions-list">
+          <button class="question-chip" data-question="وش أفضل وقت لشراء سيارة؟">
+            أفضل وقت للشراء
+          </button>
+          <button class="question-chip" data-question="وش الفرق بين البنزين 91 و 95؟">
+            فرق أنواع البنزين
+          </button>
+          <button class="question-chip" data-question="وش أفضل تأمين للسيارة في السعودية؟">
+            تأمين السيارات
+          </button>
+          <button class="question-chip" data-question="كم تكلفة صيانة تويوتا كامري؟">
+            تكلفة صيانة كامري
+          </button>
+          <button class="question-chip" data-question="وش أفضل كفرات للطريق السعودي؟">
+            كفرات الطرق السعودية
+          </button>
+          <button class="question-chip" data-question="وش يعني ترخيص المركبة؟">
+            ترخيص المركبة
+          </button>
+        </div>
+      </div>
+
+      <!-- قسم حفظ المحادثة -->
+      <div class="save-conversation card">
+        <h3><i class="fas fa-save"></i> حفظ المحادثة</h3>
+        <p>يمكنك حفظ هذه المحادثة للرجوع إليها لاحقًا في الملف الشخصي</p>
+        <div class="save-actions">
+          <button class="ghost-btn" id="saveChat">
+            <i class="fas fa-download"></i> حفظ المحادثة
+          </button>
+          <button class="ghost-btn" id="clearChat">
+            <i class="fas fa-trash"></i> مسح المحادثة
+          </button>
+          <button class="ghost-btn" id="exportChat">
+            <i class="fas fa-share"></i> مشاركة
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- 👤 الملف الشخصي -->
+    <section id="profile" class="section hidden">
+      <div class="profile-container">
+        <div class="profile-header card">
+          <div class="profile-avatar">
+            <i class="fas fa-user-circle"></i>
+            <button class="edit-avatar">
+              <i class="fas fa-camera"></i>
+            </button>
+          </div>
+          <div class="profile-info">
+            <h2 id="userName">زائر/ة</h2>
+            <p id="userEmail">لم تقومي بتسجيل الدخول</p>
+            <div class="profile-badges">
+              <span class="badge"><i class="fas fa-star"></i> عضو جديد</span>
+              <span class="badge"><i class="fas fa-car"></i> مهتمة بالسيارات</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 📊 إحصائيات المستخدم -->
+        <div class="user-stats card">
+          <h3><i class="fas fa-chart-line"></i> إحصائياتك</h3>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <i class="fas fa-question-circle"></i>
+              <div>
+                <span class="stat-value" id="questionsCount">0</span>
+                <span class="stat-label">سؤال</span>
+              </div>
+            </div>
+            <div class="stat-box">
+              <i class="fas fa-comments"></i>
+              <div>
+                <span class="stat-value" id="postsCount">0</span>
+                <span class="stat-label">مشاركة</span>
+              </div>
+            </div>
+            <div class="stat-box">
+              <i class="fas fa-heart"></i>
+              <div>
+                <span class="stat-value" id="likesCount">0</span>
+                <span class="stat-label">إعجاب</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💾 المحفوظات -->
+        <div class="saved-items card">
+          <h3><i class="fas fa-bookmark"></i> المحفوظات</h3>
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="savedCars">السيارات</button>
+            <button class="tab-btn" data-tab="savedPosts">المشاركات</button>
+            <button class="tab-btn" data-tab="savedDiagnosis">التشخيصات</button>
+          </div>
+          
+          <div class="tab-content active" id="savedCars">
+            <p class="empty-state">لا توجد سيارات محفوظة بعد</p>
+          </div>
+          
+          <div class="tab-content" id="savedPosts">
+            <p class="empty-state">لا توجد مشاركات محفوظة</p>
+          </div>
+          
+          <div class="tab-content" id="savedDiagnosis">
+            <p class="empty-state">لا توجد تشخيصات محفوظة</p>
+          </div>
+        </div>
+
+        <!-- ⚙️ الإعدادات -->
+        <div class="settings-card card">
+          <h3><i class="fas fa-cog"></i> الإعدادات</h3>
+          <div class="settings-list">
+            <div class="setting-item">
+              <div>
+                <h4>التنبيهات</h4>
+                <p>إشعارات بالتحديثات والعروض</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="notificationsToggle" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            
+            <div class="setting-item">
+              <div>
+                <h4>الوضع الليلي</h4>
+                <p>مريح للعيون في الإضاءة الخافتة</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+              </label>
+            </div>
+            
+            <div class="setting-item">
+              <div>
+                <h4>تحديد الموقع التلقائي</h4>
+                <p>لعرض الخدمات القريبة منك</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="locationToggle">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="settings-actions">
+            <button class="ghost-btn" id="exportData">
+              <i class="fas fa-download"></i> تصدير البيانات
+            </button>
+            <button class="ghost-btn" id="clearData">
+              <i class="fas fa-trash"></i> مسح البيانات
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>سيارية</h3>
+        <p>منصة مساعدة في عالم السيارات للنساء</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#" data-section="home">الرئيسية</a></li>
+          <li><a href="#" data-section="car-match">اختيار سيارة</a></li>
+          <li><a href="#" data-section="fix">حل مشكلة</a></li>
+          <li><a href="#" data-section="map">الخريطة</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>الدعم</h4>
+        <ul>
+                    <li><a href="#" data-section="ai">مساعدة AI</a></li>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+          <li><a href="#">اتصل بنا</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© سيارية 2025 - جميع الحقوق محفوظة</p>
+      <p>تم التطوير بدعم من قبل ريمو</p>
+    </div>
+    <button id="toggleTheme" class="footer-btn">🌙 الوضع الليلي</button>
+    <footer class="main-footer">
+  <p class="copy">© 2025 – Sayareh</p>
+</footer>
+
+  </footer>
+
+  <!-- جافاسكريبت -->
+  <script>
+    fetch('/assets/data/cars.json')
+      .then(response => response.json())
+      .then(data => {
+        // استخدم البيانات هنا
+        console.log(data);
+      });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>
